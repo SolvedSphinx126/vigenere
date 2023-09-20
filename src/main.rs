@@ -16,7 +16,7 @@ fn main() {
 
 fn encode(str: &String, key: &String) -> String {
     let mut key = key.chars().into_iter().cycle();
-    let mut str = str.chars().into_iter();
+    let str = str.chars().into_iter();
     let mut cipher_text = String::new();
     for chr in str {
         cipher_text.push(add(chr, key.next().unwrap()))
@@ -26,7 +26,7 @@ fn encode(str: &String, key: &String) -> String {
 
 fn decode(str: &String, key: &String) -> String {
     let mut key = key.chars().into_iter().cycle();
-    let mut str = str.chars().into_iter();
+    let str = str.chars().into_iter();
     let mut cipher_text = String::new();
     for chr in str {
         cipher_text.push(sub(chr, key.next().unwrap()))
